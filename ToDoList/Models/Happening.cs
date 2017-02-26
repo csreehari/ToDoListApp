@@ -16,17 +16,17 @@ namespace ToDoList
 
 		public string Description { get; private set; }
 
-		public HappeningType HappenningType
+		public HappeningType OccurrenceType
 		{
 			get;
 			private set;
 		}
 
-		public Happening(string title,  string description, HappeningType happeningType)
+		public Happening(string title,  string description, HappeningType occurrenceType)
 		{
 			this.Title = title;
 			this.Description = description;
-			this.HappenningType = happeningType;
+			this.OccurrenceType = occurrenceType;
 		}
 	}
 }

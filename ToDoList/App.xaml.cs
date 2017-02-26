@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using Xamarin.Forms;
-using Microsoft.Azure.Mobile;
-using Microsoft.Azure.Mobile.Analytics;
-using Microsoft.Azure.Mobile.Crashes;
 
 namespace ToDoList
 {
@@ -18,8 +15,11 @@ namespace ToDoList
 		protected override void OnStart()
 		{
 			// Handle when your app starts
+			// The below is commented out as Microsoft's Mobile Center Services is not yet completely grown
+			// So for now, Hockey App will be used instead.
+			// When Switching to Mobile Center Services please add the packages and references required
 			// Start Mobile Center Analytics & Mobile Center Crashes services
-			MobileCenter.Start(typeof(Analytics), typeof(Crashes));
+			//MobileCenter.Start(typeof(Analytics), typeof(Crashes));
 		}
 
 		protected override void OnSleep()
