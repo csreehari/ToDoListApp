@@ -5,9 +5,12 @@ namespace ToDoList
 {
 	public partial class App : Application
 	{
+		public static User User { get; set; }
+
 		public App()
 		{
 			InitializeComponent();
+			User = new User();
 
 			MainPage = new MyNavigation(new ToDoListPage());
 		}

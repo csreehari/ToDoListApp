@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:login="clr-namsepace:ToDoList" x:Class="ToDoList.LoginPage" Title="Login">
+	<StackLayout Margin="10" Padding="10" VerticalOptions="CenterAndExpand">
+		<StackLayout Margin="30, 0, 30, 0">
+			<Entry Placeholder="Username" />
+			<Entry Placeholder="Password" IsPassword="true" />
+			<Button Text="Login" HeightRequest="50" HorizontalOptions="Center" />
+		</StackLayout>
+		<StackLayout VerticalOptions="CenterAndExpand">
+			<Label Text="OR" HorizontalOptions="Center" />
+			<Button FontFamily="Roboto-Light" TextColor="#848484" FontSize="Medium"
+				FontAttributes="Bold" Text="Sign with Google" HeightRequest="50" Clicked="OnSignInWithGoogle_Clicked" HorizontalOptions="Center">
+				<!--<Button.Image>
+					<OnPlatform x:TypeArguments="FileImageSource" iOS="btn_google_signin_light_normal_ios" Android="btn_google_signin_light_normal" />
+				</Button.Image>-->
+			</Button>
+		</StackLayout>
+	</StackLayout>
+</ContentPage>

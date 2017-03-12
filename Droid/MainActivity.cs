@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Syncfusion.SfCalendar.XForms.Droid;
 
 namespace ToDoList.Droid
 {
@@ -21,6 +22,7 @@ namespace ToDoList.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+			new SfCalendarRenderer();
 
 			LoadApplication(new App());
 		}

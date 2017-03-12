@@ -9,10 +9,7 @@ namespace ToDoList.iOS
 {
 	public class MyNavigationiOSRenderer : NavigationRenderer
 	{
-		public MyNavigationiOSRenderer()
-		{
-		}
-
+		
 		protected override void OnElementChanged(VisualElementChangedEventArgs e)
 		{
 			base.OnElementChanged(e);
@@ -21,6 +18,7 @@ namespace ToDoList.iOS
 			//{
 			//	var element = (NavigationPage)e.NewElement;
 			//}
+
 		}
 	}
 }

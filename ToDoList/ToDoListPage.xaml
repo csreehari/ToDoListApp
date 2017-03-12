@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		xmlns:local="clr-namespace:ToDoList; assembly=ToDoList" 
-		x:Class="ToDoList.ToDoListPage" x:Name="ToDoPage" Title="To Do List">
-	
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ToDoList; assembly=ToDoList" x:Class="ToDoList.ToDoListPage" x:Name="ToDoPage" Title="To Do List" xmlns:CalendarSample="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms">
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			<local:HpngTypeToColorConverter x:Key="HpngTypeToColorConverter" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
-	
 	<StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical">
-		
-		<ListView x:Name="ListViewEventsToDo">
+		<StackLayout HorizontalOptions="FillAndExpand" Spacing="10" >
+			<CalendarSample:SfCalendar x:Name="calendar" OnCalendarTapped="Handle_OnCalendarTapped"/>
+		</StackLayout>
+		<StackLayout HorizontalOptions="EndAndExpand">
+			<ListView x:Name="ListViewEventsToDo" RowHeight="60">
+			<ListView.SeparatorColor>
+				<OnPlatform x:TypeArguments="Color" iOS="Transparent" />
+			</ListView.SeparatorColor>
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<ViewCell>
@@ -25,15 +26,15 @@
 								<ColumnDefinition Width="*" />
 								<ColumnDefinition Width="5*" />
 							</Grid.ColumnDefinitions>
-							<BoxView Color="{Binding OccurrenceType, Converter={StaticResource HpngTypeToColorConverter}}" 
-									Grid.RowSpan="2" WidthRequest="50" Margin="10, 5, 5, 5"/>
-							<Label Text="{Binding Title}" Grid.Column="1" VerticalOptions="CenterAndExpand" FontSize="Medium" Margin="0, 2, 0, 0"/>
-							<Label Text="{Binding Description}" Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand" FontSize="Small"  Margin="0, 0, 0, 2"/>
+							<BoxView Color="{Binding OccurrenceType, Converter={StaticResource HpngTypeToColorConverter}}" Grid.RowSpan="2" WidthRequest="50" Margin="10, 5, 5, 5" />
+							<Label Text="{Binding Title}" Grid.Column="1" VerticalOptions="CenterAndExpand" FontSize="Medium" Margin="0, 2, 0, 0" />
+							<Label Text="{Binding Description}" Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand" FontSize="Small" Margin="0, 0, 0, 2" />
 						</Grid>
 					</ViewCell>
 				</DataTemplate>
 			</ListView.ItemTemplate>
 		</ListView>
-		
+		</StackLayout>
+
 	</StackLayout>
 </ContentPage>
